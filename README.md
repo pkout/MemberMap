@@ -7,6 +7,7 @@ Author
 ------
 
 by Petr Kout
+
 [petrkout.com](http://petrkout.com)
 
 
