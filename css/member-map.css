@@ -1,0 +1,26 @@
+body { font-family: verdana; font-size: 12px; }
+a { text-decoration: none; color: #DEDEDE; cursor: pointer; }
+a:hover { color: yellow; }
+.clearfix:after { clear: both; display: block; content: " "; height: 0px; visibility: hidden; }
+.clearfix { display: inline-block; }
+/* Hide these rules from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+li.clearfix { display: list-item; }
+/* End hide from IE-mac */
+#member-map { position: relative; display: inline-block; padding: 0; margin: 0; }
+#member-map #marker-labels { background-color: #040208; border: 0px solid blue; }
+#member-map #marker-labels-content { float: left; margin: 0.5em; padding: 0; }
+#member-map #marker-labels #marker-labels-content .marker-label { font-size: 0.8em; }
+#member-map #marker-labels #marker-labels-content .on { color: #CBD501; }
+#member-map #map-wrapper { position: relative; }
+#member-map #map-wrapper #profile { position: absolute; top: 20px; width: 0px; background-color: #D1CE0E; opacity: 1; filter: alpha(opacity=1); /* For IE8 and earlier */; overflow: hidden; border: solid #D1CE0E; border-left-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-right-width: 0; }
+#member-map #map-wrapper #profile #profile-content { margin: 0.8em; color: #000; }
+#member-map #map-wrapper #profile #profile-content #profile-pic { float: right; border: 1px solid gray; margin: 0.5em; background-color: #040208; }
+#member-map #map-wrapper #profile #profile-content #name { color: #000; font-variant: small-caps; font-weight: bold; font-size: 1.1em; margin-bottom: 0.7em; text-align: center; }
+#member-map #map-wrapper #profile #profile-content #text { text-align: left; line-height: 160%; width: 500px; }
+#member-map #map-wrapper #map { margin: 0; padding: 0; }
+#member-map #map-wrapper #map-canvas { position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; margin: 0; padding: 0; }
+#member-map #footer { width: 100%; height: 20px; margin-top: -23px; font-size: 0.8em; color: #fff; background-color: #000; opacity:0.4; filter:alpha(opacity=40); /* For IE8 and earlier */ }
+#member-map #footer #footer-content { float: left; margin: 3px 1em; }
+#member-map .marker { cursor: pointer; }
