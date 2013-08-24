@@ -1,7 +1,14 @@
 MemberMap
 =========
 
-The MemberMap project repository.
+MemberMap is an HTML/jQuery/CSS plugin that shows where your team members are in the world along with a succinct profile showing basic information about each team member.
+
+Author
+------
+
+by Petr Kout
+[petrkout.com](http://petrkout.com)
+
 
 License
 -------
