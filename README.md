@@ -10,6 +10,12 @@ by Petr Kout
 
 [petrkout.com](http://petrkout.com)
 
+ScreenShot
+----------
+The yellow profile page slides in when mouse moves over the corresponding member marker on the map or over the member name on the top and slides out when the mouse moves away from the marker or label.
+
+
+![MemberMap Screenshot](https://github.com/pkout/MemberMap/raw/master/MemberMap.jpg)
 
 License
 -------
