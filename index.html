@@ -1,1 +1,46 @@
-My GitHub Page
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MemberMap</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="membermap/css/member-map.css">
+	<script src="membermap/js/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="membermap/js/member-data.js"></script>
+</head>
+<body>
+
+<div id="wrapper">
+	<h1 class="page-title">MemberMap</h1>
+	<p>This is an example of MemberMap in action.</p>
+	<br/>
+	<div id="member-map">
+		<div id="marker-labels" class="clearfix">
+		    <div id="marker-labels-content"></div>
+		</div>
+		<div id="map-wrapper">
+			<img id="map" src="membermap/images/earth_night.png"/>
+			<div id="map-canvas"></div>
+			<div id="profile">
+				<div id="profile-content" class="clearfix">
+					<img id="profile-pic" align="top" src="" />
+					<div id="name"></div>
+					<div id="text"></div>
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="clearfix">
+			<div id="footer-content"></div>
+		</div>
+		<audio id="audio-marker" preload="auto">
+			<source src="membermap/sounds/tick.mp3"></source>
+			<source src="membermap/sounds/tick.ogg"></source>
+		</audio>
+	</div> 
+</div>
+
+<script src="membermap/js/svg.js" type="text/javascript" charset="utf-8"></script>
+<script src="membermap/js/member-map.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
