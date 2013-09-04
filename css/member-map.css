@@ -1,4 +1,3 @@
-body { font-family: verdana; font-size: 12px; }
 a { text-decoration: none; color: #DEDEDE; cursor: pointer; }
 a:hover { color: yellow; }
 .clearfix:after { clear: both; display: block; content: " "; height: 0px; visibility: hidden; }
@@ -13,7 +12,7 @@ li.clearfix { display: list-item; }
 #member-map #marker-labels-content { float: left; margin: 0.5em; padding: 0; }
 #member-map #marker-labels #marker-labels-content .marker-label { font-size: 0.8em; }
 #member-map #marker-labels #marker-labels-content .on { color: #CBD501; }
-#member-map #map-wrapper { position: relative; }
+#member-map #map-wrapper { position: relative; font-family: verdana; font-size: 12px; }
 #member-map #map-wrapper #profile { position: absolute; top: 20px; width: 0px; background-color: #D1CE0E; opacity: 1; filter: alpha(opacity=1); /* For IE8 and earlier */; overflow: hidden; border: solid #D1CE0E; border-left-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-right-width: 0; }
 #member-map #map-wrapper #profile #profile-content { margin: 0.8em; color: #000; }
 #member-map #map-wrapper #profile #profile-content #profile-pic { float: right; border: 1px solid gray; margin: 0.5em; background-color: #040208; }
