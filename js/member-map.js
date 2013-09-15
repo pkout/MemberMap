@@ -50,13 +50,13 @@ function isMarkerOnLeft(markerXCoord) {
  * Renders the basic HTML and SVG structure.
  */
 function renderContent() {
-	for (var i = 0; i < markersData.length; i++) {
+	for (var i = 0; i < markersDataTop.length; i++) {
 		var markerId = 'marker-' + i;
 		var marker = draw.circle(1).attr({ 
 			id: markerId,
 			'class': 'marker',
-			cx: markersData[i].x, 
-			cy: markersData[i].y, 
+			cx: markersDataTop[i].x, 
+			cy: markersDataTop[i].y, 
 			fill: settings.MARKER_FILL_COLOR, 
 			'fill-opacity': 1,
 			stroke: settings.MARKER_STROKE_COLOR, 
@@ -64,12 +64,12 @@ function renderContent() {
 		});
 		marker.data('data', { 
 			id: markerId,
-			cx: markersData[i].x
+			cx: markersDataTop[i].x
 		});
 		marker.data('profile', { 
-			name: markersData[i].name, 
-			picturePath: markersData[i].pic, 
-			info: markersData[i].info 
+			name: markersDataTop[i].name, 
+			picturePath: markersDataTop[i].pic, 
+			info: markersDataTop[i].info 
 		});
 		marker.mouseover(function() {
 			toggleMarker(this.data('data').id, 'on');
@@ -100,7 +100,7 @@ function init() {
 	$("#member-map #map-wrapper #map").width(settings.MAP_WIDTH_PIXELS);
 	if (typeof settings.MAP_HEIGHT_PIXELS != 'undefined') 
 		$("#member-map #map-wrapper #map").height(settings.MAP_HEIGHT_PIXELS);
-	$("#member-map #marker-labels").width(settings.MAP_WIDTH_PIXELS);
+	$("#member-map .marker-labels").width(settings.MAP_WIDTH_PIXELS);
 	$("#member-map #footer").width(settings.MAP_WIDTH_PIXELS);
 	// $("#member-map #map-wrapper #profile").css(
 	// 	"left", 
@@ -186,14 +186,14 @@ function toggleMarkerLabel(id, state) {
  * Renders the marker labels above the map.
  */
 function renderMarkerLabels() {
-	$.each(markersData, function(i, markerData) {
-		$("#member-map #marker-labels #marker-labels-content").append(
+	$.each(markersDataTop, function(i, markerData) {
+		$("#member-map .marker-labels #marker-labels-top-content").append(
 			'<a id="marker-label-' + i + '"' + 
 				'class="marker-label" ' + 
 				'href="#">' + markerData.name + 
 			'</a>&nbsp;&nbsp;&nbsp;'
 		);
-		$("#member-map #marker-labels #marker-labels-content #marker-label-" + i).mouseover(
+		$("#member-map .marker-labels #marker-labels-top-content #marker-label-" + i).mouseover(
 			function() {
 				toggleMarker('marker-' + i, 'on');
 				showProfile(markerData.name, 
@@ -202,7 +202,31 @@ function renderMarkerLabels() {
 							isMarkerOnLeft(markerData.x));
 			}
 		);
-		$("#member-map #marker-labels #marker-labels-content #marker-label-" + i).mouseout(
+		$("#member-map .marker-labels #marker-labels-top-content #marker-label-" + i).mouseout(
+			function() {
+				toggleMarker('marker-' + i, 'off');
+				hideProfile(isMarkerOnLeft(markerData.x));
+			}
+		);
+	});
+
+	$.each(markersDataBottom, function(i, markerData) {
+		$("#member-map .marker-labels #marker-labels-bottom-content").append(
+			'<a id="marker-label-' + i + '"' + 
+				'class="marker-label" ' + 
+				'href="#">' + markerData.name + 
+			'</a>&nbsp;&nbsp;&nbsp;'
+		);
+		$("#member-map .marker-labels #marker-labels-bottom-content #marker-label-" + i).mouseover(
+			function() {
+				toggleMarker('marker-' + i, 'on');
+				showProfile(markerData.name, 
+							markerData.pic,
+							markerData.info,
+							isMarkerOnLeft(markerData.x));
+			}
+		);
+		$("#member-map .marker-labels #marker-labels-bottom-content #marker-label-" + i).mouseout(
 			function() {
 				toggleMarker('marker-' + i, 'off');
 				hideProfile(isMarkerOnLeft(markerData.x));
@@ -216,7 +240,7 @@ function renderMarkerLabels() {
  * or a marker label.
  */
 function renderAudioTags() {
-	$.each(markersData, function(i) {
+	$.each(markersDataTop, function(i) {
 		if (i != 0) {
 			$("#audio-marker")
 				.clone()
@@ -242,8 +266,9 @@ function console(text) {
 function consoleMousePositionOnMap() {
 	$('#member-map #map-canvas').mousemove(function(e) {
 		var offset = $(this).offset();
-		console("x: " + parseInt(e.clientX - offset.left) + 
-				", y: " + parseInt(e.clientY - offset.top));
+		console(defaultConsoleText + " (" +
+		 	"x: " + parseInt(e.clientX - offset.left) + ", " +
+		    "y: " + parseInt(e.clientY - offset.top) + ")");
 	});
 	$('#member-map #map-canvas').mouseout(function(e) {
 		console(defaultConsoleText);
