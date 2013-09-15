@@ -17,6 +17,10 @@ The yellow profile page slides in when mouse moves over the corresponding member
 
 ![MemberMap Screenshot](https://github.com/pkout/MemberMap/raw/master/MemberMap.jpg)
 
+A fully working demo is available here:
+
+[MemberMap Demo] (http://pkout.github.io/MemberMap/)
+
 License
 -------
 
